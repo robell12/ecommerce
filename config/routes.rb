@@ -8,7 +8,5 @@ Rails.application.routes.draw do
   get '/garden', to: 'categories#garden', as: 'garden'
   get '/outdoor', to: 'categories#outdoors', as: 'outdoor'
 
-  resources :categories do
-  	resources :products
-  end
+  resources :products
 end

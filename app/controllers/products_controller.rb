@@ -1,22 +1,21 @@
 class ProductsController < ApplicationController
- 	before_action :set_categories
- 	before_action :set_products, except: [:index, :new, :create]
+ 	before_action :set_product, except: [:index, :new, :create]
 
   def index
-  	@products = @category.products
+  	@products = Product.all
   end
 
   def new
-  	@product = @category.products.new
+  	@product = Product.new
   end
 
   def edit
   end
 
   def create
-  	@product = @category.products.new(product_params)
+  	@product = Product.new(product_params)
   	if @product.save
-  		redirect_to category_product_path(@category, @product)
+  		redirect_to products_path(@product)
   	else
   		render :new
   	end
@@ -24,7 +23,7 @@ class ProductsController < ApplicationController
 
   def update
   	if @product.update(product_params)
-  		redirect_to category_product_path(@category, @product)
+  		redirect_to products_path(@product)
   	else
   		render :edit
   	end
@@ -35,20 +34,16 @@ class ProductsController < ApplicationController
 
   def destroy
   	@product.destroy
-  	redirect_to category_products_path(@category)
+  	redirect_to products_path
   end
 
   private
   	def product_params
-  		params.require(:product).permit(:name, :price, 
+  		params.require(:product).permit(:name, :price,
   									:quantity, :description, :brand)
   	end
 
-  	def set_category
-  		@category = Category.find(params[:category_id])
-  	end
-
   	def set_product
-  		@product = @category.products.find(params[:id])
+  		@product = Product.find(params[:id])
   	end
 end
