@@ -1,0 +1,23 @@
+<%= form_for [@category, @part] do |f| %>
+	<div class="col m6">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+	<div class="col m6">
+		<%= f.label :price %>
+		<%= f.number_field :price %>
+	</div>
+	<div class="col m6">
+		<%= f.label :quantity %>
+		<%= f.number_field :quantity %>
+	</div>
+	<div class="col m6">
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</div>
+	<div class="col m6">
+		<%= f.label :brand %>
+		<%= f.text_field :brand %>
+	</div>
+	<%= f.submit class: "btn green white-text" %>
+<% end %>

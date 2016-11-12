@@ -1,2 +1,22 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1>Shop all Products</h1>
+<% if @products.any? %>
+	
+<ul class="collapsible" data-collapsible="accordion">
+	<% @products.each do |product| %>
+	  <li>
+	    <div class="collapsible-header"><%= product.name %></div>
+	    <div class="collapsible-body">
+	      <p>Part: <%= product.number %></p>
+	      <p>
+	        <%= link_to 'Edit', edit_category_product_path(@category, product), class: 'btn' %>
+	        <%= link_to 'Delete', category_products_path(@category, product), method: :delete, data: {confirm: 'sure?'}, class: "btn"%>
+	      </p>
+	    </div>
+	  </li>
+  <%end %>
+</ul>
+<% else %>
+  <h3>No Products Yet, add below</h3>
+<% end %>
+
+<%= link_to 'New Product', new_categoty_product_path(@category), class: 'btn' %>
