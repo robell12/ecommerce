@@ -1,4 +1,13 @@
 class CategoriesController < ApplicationController
-  def show
+  def electronics
+  end
+
+  def furniture
+  end
+
+  def garden
+  end
+
+  def electronics
   end
 end
