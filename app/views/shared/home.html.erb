@@ -1,2 +1,22 @@
-<h1>Shared#home</h1>
-<p>Find me in app/views/shared/home.html.erb</p>
+<div class='container'>
+  <%= render 'navbar' %>
+  <h1 class='center'>DPL Shop Home</h1>
+    <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">Electronics</div>
+      <div class="collapsible-body"><p>View Electronics!</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Furniture</div>
+      <div class="collapsible-body"><p>View Furniture!</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Garden</div>
+      <div class="collapsible-body"><p>View Garden!</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Outdoors</div>
+      <div class="collapsible-body"><p>View Outdoor!</p></div>
+    </li>
+  </ul>
+</div>
