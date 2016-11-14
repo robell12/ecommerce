@@ -10,13 +10,19 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    if current_user.id != @product.user_id
+      flash[:error] = "That product can't be stolen"
+      redirect_to products_path(@product)
+    end
   end
 
   def create
-  	@product = Product.new(product_params)
+  	@product = current_user.products.new(product_params)
   	if @product.save
+      flash[:success] = "Product Created"
   		redirect_to products_path(@product)
   	else
+      flash[:error] = "Something is wrong!"
   		render :new
   	end
   end
@@ -33,8 +39,13 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    if current_user.id != @product.user_id
+      flash[:error] = "That product can't be stolen"
+      redirect_to products_path(@product)
+    else
   	@product.destroy
   	redirect_to products_path
+    end
   end
 
   private
