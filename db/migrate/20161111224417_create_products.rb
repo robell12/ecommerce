@@ -6,7 +6,10 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.integer :quantity
       t.string :description
       t.string :brand
-      t.belongs_to :category, foreign_key: true
+      t.string :category
+      t.belongs_to :user
+
+
 
       t.timestamps
     end

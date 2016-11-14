@@ -8,6 +8,6 @@ class CategoriesController < ApplicationController
   def garden
   end
 
-  def electronics
+  def outdoors
   end
 end

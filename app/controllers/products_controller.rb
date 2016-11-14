@@ -2,11 +2,11 @@ class ProductsController < ApplicationController
  	before_action :set_product, except: [:index, :new, :create]
 
   def index
-  	@products = Product.all
+  	@products = current_user.products.all
   end
 
   def new
-  	@product = Product.new
+  	@product = current_user.products.new
   end
 
   def edit
@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
   def destroy
     if current_user.id != @product.user_id
       flash[:error] = "That product can't be stolen"
-      redirect_to products_path(@product)
+      redirect_to products_path
     else
   	@product.destroy
   	redirect_to products_path
@@ -50,8 +50,7 @@ class ProductsController < ApplicationController
 
   private
   	def product_params
-  		params.require(:product).permit(:name, :price,
-  									:quantity, :description, :brand)
+  		params.require(:product).permit(:name, :price, :quantity, :description, :brand, :category)
   	end
 
   	def set_product
