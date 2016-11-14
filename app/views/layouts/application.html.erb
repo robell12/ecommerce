@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <div class='container'>
     <head>
       <link href="https://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet">
       <title>Ecommerce</title>
@@ -12,7 +11,8 @@
 
     <body>
       <%= render(partial: '/layouts/navbar') %>
-      <%= yield %>
+      <div class='container'>
+        <%= yield %>
+      </div>
     </body>
-  </div>
 </html>
