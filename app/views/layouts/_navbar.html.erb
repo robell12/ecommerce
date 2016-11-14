@@ -1,19 +1,17 @@
 <nav>
   <div class="nav-wrapper" id="nav">
-    <!-- <%= image_tag('Shopping.jpg')%> -->
+    <a href="/">DPL Home</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="/">Home</a></li>
       <li><a href="/">Shopping Cart</a></li>
       <% if user_signed_in? %>
         <li>
-          <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:'btn blue'%>
-          <h2>Welcome </h2>
+          <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class:'btn blue' %>
         </li>
       <% else %>
         <li>
           <%= link_to 'Login', new_user_session_path %>
         </li>
-        <% end %>
+      <% end %>
     </ul>
   </div>
 </nav>
