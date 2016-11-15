@@ -1,38 +1,9 @@
 <h1 class="center">Garden</h1>
 <hr />
 
-<div class="row">
-  <div class="col s12 m6">
-    <div class="card small" id="nav">
-      <div class="card-content white-text">
-        <span class="card-title">Hand Tools</span>
-        <p>Shovels, Trowels, Hoes, and Rakes</p>
-      </div>
-      <div class="card-action">
-        <%= link_to 'New Product', products_path %>
-      </div>
-    </div>
-  </div>
-  <div class="col s12 m6">
-    <div class="card small" id="nav">
-      <div class="card-content white-text">
-        <span class="card-title">Pest Control</span>
-        <p>Fly Swatters, Traps, Foggers, Repellents, and Sprays</p>
-      </div>
-      <div class="card-action">
-        <%= link_to 'New Product', products_path %>
-      </div>
-    </div>
-  </div>
-  <div class="col s12 m6">
-    <div class="card small" id="nav">
-      <div class="card-content white-text">
-        <span class="card-title">Indoor Gardening</span>
-        <p>Germination Kits, Growing Lamps, Heating Quilts and Mats</p>
-      </div>
-      <div class="card-action">
-        <%= link_to 'New Product', products_path %>
-      </div>
-    </div>
-  </div>
-</div>
+
+<% @products.each do |p| %>
+  <%= p.name %>
+<% end %>
+
+<%= link_to 'New Product', products_path %>
