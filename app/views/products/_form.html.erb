@@ -1,27 +1,41 @@
-<%= form_for @product do |f| %>
-	<div class="col m6">
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</div>
-	<div class="col m6">
-		<%= f.label :price %>
-		<%= f.number_field :price %>
-	</div>
-	<div class="col m6">
-		<%= f.label :quantity %>
-		<%= f.number_field :quantity %>
-	</div>
-	<div class="col m6">
-		<%= f.label :description %>
-		<%= f.text_area :description %>
-	</div>
-	<div class="col m6">
-		<%= f.label :brand %>
-		<%= f.text_field :brand %>
-	</div>
-	<div class="col m6">
-		<%= f.label :category %>
-		<%= f.select :category, ['Electronics', 'Furniture', 'Garden', 'Outdoors'] %>
-	</div>
-	<%= f.submit class: "btn", id: "nav" %>
-<% end %>
+<div class="row">
+	<%= form_for @product do |f| %>
+		<div class="row">
+			<div class="input-field col m6">
+				<%= f.label :name, class: 'active' %>
+				<br />
+				<%= f.text_field :name %>
+			</div>
+			<div class="input-field col m6">
+				<%= f.label :price, class: 'active' %>
+				<br />
+				<%= f.number_field :price %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col m6">
+				<%= f.label :quantity, class: 'active' %>
+				<br />
+				<%= f.number_field :quantity %>
+			</div>
+			<div class="input-field col m6">
+				<%= f.label :description, class: 'active' %>
+				<br />
+				<%= f.text_area :description %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col m6">
+				<%= f.label :brand, class: 'active' %>
+				<br />
+				<%= f.text_field :brand %>
+			</div>
+			<div class="input-field col m6">
+				<%= f.label :category, class: 'active' %>
+				<br />
+				<%= f.select :category, ['Electronics', 'Furniture', 'Garden', 'Outdoors'] %>
+			</div>
+		</div>
+		<%= f.submit class: "btn", id: "nav" %>
+	<% end %>
+</div>
