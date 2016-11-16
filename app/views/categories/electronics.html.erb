@@ -3,7 +3,6 @@
 <hr />
 
 <% @products.each do |p| %>
-  <%= p.name %>
   <div class="row">
         <div class="col s12 m6">
           <div class="card blue-grey darken-1">
@@ -25,4 +24,4 @@
 
 <% end %>
 
-<%= link_to 'New Product', products_path %>
+<%= link_to 'New Product', products_path, class: 'btn black' %>
