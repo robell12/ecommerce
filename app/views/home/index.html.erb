@@ -1,5 +1,21 @@
-<h1><%= current_user.email %></h1>
-
-
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class='container'>
+  <h1 class='center'>DPL Shop Home</h1>
+    <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">Electronics</div>
+      <div class='collapsible-body'><p><%= link_to 'View Electronics', electronics_path, class: 'btn orange'%></p></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Furniture</div>
+      <div class="collapsible-body"><p><%= link_to 'View Furniture', furniture_path, class: 'btn orange' %></p></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Garden</div>
+      <div class="collapsible-body"><p><%= link_to 'View Garden', garden_path, class: 'btn orange' %></p></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Outdoors</div>
+      <div class="collapsible-body"><p><%= link_to 'View Outdoor', outdoor_path, class: 'btn orange' %></p></div>
+    </li>
+  </ul>
+</div>
